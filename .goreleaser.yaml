@@ -53,6 +53,21 @@ changelog:
       - Merge pull request
       - Merge branch
 
+brews:
+  - name: chita
+    repository:
+      owner: chitacloud
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+    directory: Formula
+    homepage: "https://app.chitacloud.com"
+    description: "Chita Cloud CLI"
+    license: "MIT"
+    install: |
+      bin.install "chita"
+    test: |
+      system "#{bin}/chita", "--version"
+
 release:
   github:
     owner: chitacloud
