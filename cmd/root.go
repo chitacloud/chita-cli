@@ -7,10 +7,13 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// version is set at build time via ldflags.
+var version = "dev"
+
 var rootCmd = &cobra.Command{
 	Use:     "chita",
 	Short:   "Chita Cloud CLI",
-	Version: "0.0.1-alpha",
+	Version: version,
 }
 
 func Execute() {
